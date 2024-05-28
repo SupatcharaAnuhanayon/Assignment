@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SessionStorageService {
 public static readonly USER_KEY = 'user-auth';
-private isLogged = new BehaviorSubject<any>(null);
+private isLogged = new BehaviorSubject<any>(false);
 isLogged$ = this.isLogged.asObservable();
 
   constructor() { }
@@ -26,13 +26,12 @@ isLogged$ = this.isLogged.asObservable();
   }
   
   removeUser() {
-
     this.isLogged.next(false)
     sessionStorage.removeItem(SessionStorageService.USER_KEY)
   }
 
   isLoggedIn():boolean {
-
+    this.isLogged.next(sessionStorage.getItem(SessionStorageService.USER_KEY) !== null)
     return sessionStorage.getItem(SessionStorageService.USER_KEY) !== null
     
   }
