@@ -1,0 +1,14 @@
+<main class="main">
+    <div class="navbar">
+      <a class="navbar-brand" >Assignment</a>
+      <div class="d-flex" id="collapsibleNavId" *ngIf="isLogged|async">
+        <div class="align-self-center me-3">{{ name }}</div>
+        <button class="btn btn-primary" (click)="logOut()">Log Out</button>
+      </div>
+      
+    </div>
+
+    <div class="content">
+      <router-outlet />
+    </div>
+</main>

@@ -1,0 +1,4 @@
+<div>{{ questionInfo?.title }}</div>
+<div class="m-1 " *ngFor="let item of questionInfo?.questionAnswerInfo">
+  <input type="checkbox" [checked]="item.selected" (change)="onChange(item)"> {{ item.sequence }}.  {{ item.answer }}
+</div>

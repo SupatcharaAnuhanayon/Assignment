@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      .bg {
+        background-image: url("assets/login_page.svg"); /* lace with your image URL */
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+      }
+      .login-container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
+      .login-form {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container login-container">
+      <div class="bg"></div>
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="card mt-5 login-form">
+            <div class="card-body">
+              <label for="Username">Username</label>
+              <input
+                id="userName"
+                class="form-control mb-2"
+                type="text"
+                placeholder="username"
+                [(ngModel)]="username"
+              />
+              <label for="password">Password</label>
+              <input
+                id="Password"
+                class="form-control mb-2"
+                type="password"
+                placeholder="Password"
+                [(ngModel)]="password"/>
+              <button
+                class="btn btn-primary"
+                type="submit"
+                (click)="onSubmit()">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
