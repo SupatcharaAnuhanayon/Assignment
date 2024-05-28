@@ -16,6 +16,12 @@ export class AppComponent {
   isLogged : Observable<boolean>
   title = 'final-project';
   constructor(private sessionStorageService: SessionStorageService , private route: Router){
+
+    console.log("this.storage.isLogged$  " + this.sessionStorageService.isLoggedIn())
+    if(!this.sessionStorageService.isLoggedIn()) {
+     console.log("here ")
+     route.navigate(['login'])}
+
     this.name =sessionStorageService.getUser().fullName;
     this.isLogged = sessionStorageService.isLogged$;
     

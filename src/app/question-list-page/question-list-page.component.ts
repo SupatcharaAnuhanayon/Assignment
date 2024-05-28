@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { QuestionListModel } from '../shared/Models/question-list-model';
 import { CommonModule } from '@angular/common';
 import { QuestionService } from './services/question.service';
-import { SessionStorageService } from '../shared/session-storage.service';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-question-list-page',
@@ -14,7 +13,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 })
 export class QuestionListPageComponent {
   questionList: QuestionListModel[] = [];
-  constructor(private questionService: QuestionService ,private storage: SessionStorageService) {
+  constructor(private questionService: QuestionService ) {
 
     this.questionService.getQuestionList().subscribe((response) => {
     
